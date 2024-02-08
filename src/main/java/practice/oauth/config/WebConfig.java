@@ -23,12 +23,4 @@ public class WebConfig implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/templates/");
     }
 
-    @Override
-    public void addCorsMappings(final CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOriginPatterns("*")
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowCredentials(true);
-    }
-
 }

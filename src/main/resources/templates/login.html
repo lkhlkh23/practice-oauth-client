@@ -12,24 +12,13 @@
 <body>
     <div class="container mt-5">
         <h1>Welcome to the Login Page</h1>
-        <p><a class="btn btn-danger" id="googleLoginBtn">google</a></p>
+        <p><a class="btn btn-danger" href="http://localhost:8080/login">google</a></p>
     </div>
+</body>
 <script>
     $(document).ready(function() {
-        $('#googleLoginBtn').click(function(e) {
-            e.preventDefault();
-            $.ajax({
-                type: "GET",
-                url: "http://localhost:8080/login",
-                success: function(response) {
-                    console.log("Success: ", response);
-                },
-                error: function(xhr, status, error) {
-                    console.error("Error: ", error);
-                }
-            });
-        });
+        let email = new UrlSearchParams(window.location.search).get('email');
+        $('#email').val(email);
     });
 </script>
-</body>
 </html>
